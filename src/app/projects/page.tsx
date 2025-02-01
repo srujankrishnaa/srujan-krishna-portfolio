@@ -2,7 +2,7 @@ import ProjectCard from '@/components/Project/ProjectCard'
 import CdBack from '@/components/shared/CdBack'
 import { topProjects } from '@/lib/constants'
 import { ArrowRight } from 'lucide-react'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -26,7 +26,10 @@ const page = () => {
           viewBox="0 0 200 40"
           className="-translate-y-12 translate-x-[-86px]"
           xmlns="http://www.w3.org/2000/svg"
+          aria-label="Decorative line under Projects heading"
+          role="img"
         >
+          <title>Decorative line</title>
           <defs>
             <linearGradient
               id="line-gradient"
@@ -74,11 +77,20 @@ const page = () => {
           View more on{' '}
           <Link
             href="https://github.com/Rohit-Singh-Rawat?tab=repositories"
-            className="group inline-flex items-center justify-start bg-gradient-to-r from-green-200 via-green-400 to-purple-700 bg-clip-text font-neu text-transparent"
+            className="peer inline-flex items-center justify-start bg-gradient-to-r from-green-200 via-green-400 via-70% to-purple-500 bg-clip-text font-neu text-transparent"
+            target="_blank"
           >
             Github
-            <ArrowRight className="ml-2 inline-block size-4 rounded-full border border-transparent stroke-black stroke-1 transition-all duration-300 ease-linear group-hover:-rotate-45 group-hover:border-slate-950 group-hover:stroke-[2px] dark:stroke-white dark:group-hover:border-slate-50" />
           </Link>
+          {' & '}
+          <Link
+            href="https://rsrcraft.me"
+            className="peer inline-flex items-center justify-start bg-gradient-to-r from-green-200 via-green-400 via-70% to-purple-700 bg-clip-text font-neu text-transparent"
+            target="_blank"
+          >
+            rsrcraft
+          </Link>
+          <ArrowRight className="ml-2 inline-block size-4 rounded-full border border-transparent stroke-black stroke-1 transition-all duration-300 ease-linear peer-hover:-rotate-45 peer-hover:border-slate-950 peer-hover:stroke-[2px] dark:stroke-white dark:peer-hover:border-slate-50" />
         </h1>
         <h1 className="mt-24 bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600 bg-clip-text text-center font-neu text-4xl font-extrabold text-transparent opacity-30 md:text-7xl">
           Shipping More Soon

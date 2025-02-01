@@ -1,13 +1,13 @@
+import MdxIcon from '@/components/Home/MdxIcon'
+import VercelLogoIcon from '@/components/Home/VercelIcon'
+import { FramerMotion } from '@/components/Icons/StackIcons/FramerMotion'
 import Nextjs from '@/components/Icons/StackIcons/Nextjs'
 import { Shadcn } from '@/components/Icons/StackIcons/Shadcn'
-import { Tailwind } from '@/components/Icons/StackIcons/tailwindcss'
 import { Github } from '@/components/Icons/StackIcons/github'
-import { FramerMotion } from '@/components/Icons/StackIcons/FramerMotion'
+import { Tailwind } from '@/components/Icons/StackIcons/tailwindcss'
 import Umami from '@/components/Icons/Umami'
-import VercelLogoIcon from '@/components/Home/VercelIcon'
-import MdxIcon from '@/components/Home/MdxIcon'
 
-import React from 'react'
+import type React from 'react'
 type NavItems = {
   name: string
   href: string
@@ -47,8 +47,8 @@ export const iconData: IconData[] = [
   },
   {
     Component: FramerMotion,
-    href: 'https://www.framer.com/api/motion/',
-    className: 'size-12',
+    href: 'https://motion.dev/docs/animate',
+    className: 'size-12 dark:invert',
     label: 'Animation',
   },
   {

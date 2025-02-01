@@ -34,7 +34,7 @@ export default function WorkPage() {
 
       <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
 
-      <div className="space-y-8">
+      <div className="space-y-8 text-sm">
         <div className="space-y-2">
           <Link
             href={'https://leadlly.in'}
@@ -49,34 +49,32 @@ export default function WorkPage() {
             </div>
           </Link>
           <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            Full Stack Developer | April &apos;24 - Present
+            Full Stack Developer | April &apos;24 - December &apos;24
           </p>
         </div>
 
         <p className="leading-relaxed">
-          Leadlly is an open-source platform for self-study and mentorship in
-          educational settings. My role as a Full Stack Developer has allowed me
-          to contribute in meaningful ways:
+          At Leadlly, an open-source educational platform, I contributed as a
+          Full Stack Developer:
         </p>
-        <ul className="list-inside list-disc space-y-4 leading-relaxed">
+        <ul className="list-inside list-disc space-y-2 leading-relaxed">
+          <li>Engineered responsive landing page and core web application.</li>
           <li>
-            Developed a visually captivating landing page that effectively
-            communicates the platform&apos;s mission and engages users.
+            Implemented student-centric features: error tracking, interactive
+            quizzes, and study planner.
           </li>
           <li>
-            Implemented student-centric services, including:
-            <ul className="ml-6 list-inside list-disc">
-              <li>Error book for tracking mistakes.</li>
-              <li>Interactive quizzes to reinforce learning.</li>
-              <li>Planner to help students organize their studies.</li>
-            </ul>
+            Optimized for mobile devices to enhance accessibility and user
+            experience.
+          </li>
+          <li>
+            Contributed to full-stack development using Next.js and modern web
+            technologies.
           </li>
         </ul>
-        <p className="mt-6 leading-relaxed">
-          This project has also been a significant learning journey. I honed my
-          skills in Figma, Framer Motion, and Next.js, going beyond
-          surface-level understanding to master industry standards and best
-          practices.
+        <p className="mt-4 leading-relaxed">
+          This project deepened my expertise in Figma, Framer Motion, and
+          Next.js, aligning with industry standards.
         </p>
       </div>
 

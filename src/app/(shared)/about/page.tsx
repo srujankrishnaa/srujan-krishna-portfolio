@@ -3,12 +3,12 @@ import PolaroidPhoto from '@/components/About/PolaroidPhoto'
 import p1 from '@/../../public/images/photo1.jpg'
 import p2 from '@/../../public/images/photo2.jpg'
 import p3 from '@/../../public/images/photo3.jpg'
-import Link from 'next/link'
-import { iconData, inspirationWebsites } from '@/lib/constants'
+import { SpacingWhale } from '@/components/Home/SpacingWhle'
 import Logo from '@/components/Icons/Logo'
 import CdBack from '@/components/shared/CdBack'
-import { SpacingWhale } from '@/components/Home/SpacingWhle'
-import { Metadata } from 'next'
+import { iconData, inspirationWebsites } from '@/lib/constants'
+import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -108,8 +108,8 @@ const page = () => {
             </Link>
           </p>
           <div className="grid grid-cols-4 grid-rows-2 content-center gap-10 p-3">
-            {iconData.map(({ Component, href, className, label }, index) => (
-              <div key={index} className="group relative w-fit pb-3">
+            {iconData.map(({ Component, href, className, label }) => (
+              <div key={label} className="group relative w-fit pb-3">
                 <Link href={href} target="_blank" rel="noopener noreferrer">
                   <Component className={className} />
                 </Link>
