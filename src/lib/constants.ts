@@ -90,6 +90,25 @@ export const inspirationWebsites = [
 ]
 export const topProjects = [
   {
+    videoSrc: 'echo-chat-AB1zhCP8soPOmnJJP7Fho36VpJgaFg.mp4',
+    imageSrc: '/images/project/echo.png',
+    title: 'Echo Chat',
+    tags: [
+      'Nextjs',
+      'Express',
+      'Prisma',
+      'PostgreSQL',
+      'WebSockets',
+      'TailwindCSS',
+      'AWS',
+    ],
+    timeline: 'Nov 2024 - Dec 2024',
+    tagline: 'Real-time chat rooms',
+    sourceCodeHref: 'https://github.com/Rohit-Singh-Rawat/Echo-Chat',
+    liveDemoHref: 'https://echo.rsrcraft.me/',
+  },
+
+  {
     videoSrc: 'space-uecizlixlpcAH1cmch9kYp12JQ0ryA.mp4',
     imageSrc: '/images/project/Space.png',
     title: 'Space',
