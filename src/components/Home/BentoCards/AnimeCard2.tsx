@@ -20,7 +20,6 @@ const AnimeCard2 = () => {
           alt="anime"
           width={438}
           height={1100}
-          placeholder="blur"
           src={arima}
           className="size-full object-cover transition-all duration-500 group-hover:scale-[1.35]"
         />

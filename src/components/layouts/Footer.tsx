@@ -26,10 +26,10 @@ async function Footer({ footerWidth = 'max-w-3xl' }: { footerWidth?: string }) {
         <time className="hidden sm:inline" dateTime={String(year)}>
           {year}{' '}
         </time>{' '}
-        ©<p>Rohit Singh Rawat</p>
+        ©<p>Gandamalla Srujan Krishna</p>
         <a
           className="link ml-auto inline-flex items-center gap-1.5"
-          href="https://github.com/Rohit-Singh-Rawat/Space"
+          href="https://github.com/srujankrishnaa/Space"
           rel="noreferrer"
           target="_blank"
         >

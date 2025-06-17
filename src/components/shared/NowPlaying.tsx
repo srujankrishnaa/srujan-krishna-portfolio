@@ -1,5 +1,4 @@
 import { getNowPlaying } from '@/lib/Spotify'
-import { Spotify } from '../Icons/socials/Spotify'
 
 export default async function NowPlaying() {
   const nowPlayingData = await getNowPlaying()
@@ -8,7 +7,6 @@ export default async function NowPlaying() {
     return (
       <div className="mb-4 flex w-full flex-row-reverse items-center justify-center space-x-0 text-sm sm:flex-row sm:space-x-2">
         {' '}
-        <Spotify className="ml-auto size-4" />
         <div className="inline-flex w-full max-w-full flex-col truncate sm:flex-row">
           <p className="font-medium text-gray-800 dark:text-gray-200">
             {nowPlayingData === 'Currently Not Playing'
@@ -25,7 +23,6 @@ export default async function NowPlaying() {
 
   return (
     <div className="mb-4 flex w-full flex-row-reverse items-center justify-center space-x-0 text-sm sm:flex-row sm:space-x-2">
-      <Spotify className="ml-auto size-4" />
       <div className="inline-flex w-full max-w-full flex-col truncate sm:flex-row">
         <a
           className="max-w-max truncate font-medium text-gray-800 dark:text-gray-200"

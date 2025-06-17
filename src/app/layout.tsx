@@ -10,12 +10,12 @@ import { Analytics } from '@/components/shared/Analytics'
 const inter = Inter({ subsets: ['latin'] })
 
 const info = {
-  name: 'Rohit Singh Rawat',
-  twitter: '@Spacing_Whale',
+  name: 'Gandamalla Srujan Krishna',
+  twitter: '',
   description:
-    'Full-Stack Developer, Next.js Buff, Freelancer, Always Evolving. Crafting web apps to ignite ideas.',
-  url: 'https://rohitsinghrawat.tech',
-  image: '/images/RohitSinghRawat.png',
+    'Full-Stack App Developer, Product Thinker, Always Evolving. Building scalable apps that merge business and technology.',
+  url: 'https://your-portfolio-url.com',
+  image: '/images/profile.png',
 }
 
 export const metadata: Metadata = {

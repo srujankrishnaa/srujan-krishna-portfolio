@@ -1,10 +1,7 @@
 import { Discord } from '@/components/Icons/socials/Discord'
 import { Linkedin } from '@/components/Icons/socials/Linkedin'
-import { PeerList } from '@/components/Icons/socials/PeerList'
-import { Spotify } from '@/components/Icons/socials/Spotify'
 import { Twitter } from '@/components/Icons/socials/Twitter'
 import BentoCard from './BentoCard'
-import { YT } from '@/components/Icons/socials/YT'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import React from 'react'
@@ -21,7 +18,7 @@ const socials = [
   {
     name: 'LinkedIn',
     icon: Linkedin,
-    link: 'https://www.linkedin.com/in/rohit-singh-rawat-8b4170256/',
+    link: 'https://www.linkedin.com/in/srujan-krishna-944a03257/',
     translateX: '12px',
     rotate: '-10deg',
     zIndex: 1,
@@ -29,34 +26,10 @@ const socials = [
   {
     name: 'Twitter',
     icon: Twitter,
-    link: 'https://x.com/Spacing_Whale',
+    link: 'https://x.com/srujanKrishna7',
     translateX: '4px',
     rotate: '-3deg',
     zIndex: 3,
-  },
-  {
-    name: 'PeerList',
-    icon: PeerList,
-    link: 'https://peerlist.io/spacingwhale ',
-    translateX: '-4px',
-    rotate: '3deg',
-    zIndex: 2,
-  },
-  {
-    name: 'Spotify',
-    icon: Spotify,
-    link: 'https://open.spotify.com/user/31r6yaikufv7hnskfosgxywj64yu',
-    translateX: '-12px',
-    rotate: '10deg',
-    zIndex: 1,
-  },
-  {
-    name: 'YouTube',
-    icon: YT,
-    link: 'https://www.youtube.com/@rohitsinghrawat6391',
-    translateX: '-24px',
-    rotate: '20deg',
-    zIndex: 0,
   },
 ]
 

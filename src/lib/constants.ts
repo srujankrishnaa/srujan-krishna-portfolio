@@ -1,13 +1,57 @@
-import MdxIcon from '@/components/Home/MdxIcon'
-import VercelLogoIcon from '@/components/Home/VercelIcon'
-import { FramerMotion } from '@/components/Icons/StackIcons/FramerMotion'
-import Nextjs from '@/components/Icons/StackIcons/Nextjs'
-import { Shadcn } from '@/components/Icons/StackIcons/Shadcn'
-import { Github } from '@/components/Icons/StackIcons/github'
-import { Tailwind } from '@/components/Icons/StackIcons/tailwindcss'
-import Umami from '@/components/Icons/Umami'
+import PythonIcon from '@/components/Icons/StackIcons/python'
+import RIcon from '@/components/Icons/StackIcons/r'
+import DartIcon from '@/components/Icons/StackIcons/dart'
+import FlutterIcon from '@/components/Icons/StackIcons/flutter'
+import TensorflowIcon from '@/components/Icons/StackIcons/tensorflow'
+import PandasIcon from '@/components/Icons/StackIcons/pandas'
+import MatplotlibIcon from '@/components/Icons/StackIcons/matplotlib'
+import AndroidStudioIcon from '@/components/Icons/StackIcons/androidstudio'
+import VercelIcon from '@/components/Icons/StackIcons/vercel'
+import KafkaIcon from '@/components/Icons/StackIcons/kafka'
+import GcpIcon from '@/components/Icons/StackIcons/gcp'
+import SupabaseIcon from '@/components/Icons/StackIcons/supabase'
+import FlaskIcon from '@/components/Icons/StackIcons/flask'
+import { Postgresql as PostgresIcon } from '@/components/Icons/StackIcons/postgresql'
+// import UnityIcon from '@/components/Icons/StackIcons/unity' // Uncomment if available
 
 import type React from 'react'
+import { TechIcon } from './types'
+import { TbBrandNextjs } from 'react-icons/tb'
+import { BiLogoTypescript, BiLogoPostgresql } from 'react-icons/bi'
+import {
+  SiTailwindcss,
+  SiPrisma,
+  SiMongodb,
+  SiExpress,
+  SiChakraui,
+  SiPython,
+  SiR,
+  SiDart,
+  SiFlutter,
+  SiTensorflow,
+  SiNumpy,
+  SiPandas,
+  SiMatplotlib,
+  SiAndroidstudio,
+  SiVercel,
+  SiApachekafka,
+  SiGooglecloud,
+  SiSupabase,
+  SiFlask,
+} from 'react-icons/si'
+import {
+  FaNode,
+  FaReact,
+  FaAws,
+  FaDocker,
+  FaDiscord,
+  FaLinkedinIn,
+  FaGithub,
+} from 'react-icons/fa'
+import { RiSpotifyFill } from 'react-icons/ri'
+import { FaXTwitter } from 'react-icons/fa6'
+import { GrGraphQl } from 'react-icons/gr'
+
 type NavItems = {
   name: string
   href: string
@@ -15,9 +59,8 @@ type NavItems = {
 export const navItems: NavItems = [
   { name: 'Work', href: '/work' },
   { name: 'Projects', href: '/projects' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Achievements', href: '/achievements' },
   { name: 'About', href: '/about' },
-  { name: 'Playground', href: '/playground' },
 ]
 
 interface IconData {
@@ -28,53 +71,95 @@ interface IconData {
 }
 export const iconData: IconData[] = [
   {
-    Component: Nextjs,
-    href: 'https://nextjs.org',
-    className: 'size-12 dark:invert',
-    label: 'Framework',
-  },
-  {
-    Component: Tailwind,
-    href: 'https://tailwindcss.com',
-    className: 'size-12 grayscale invert dark:invert-0',
-    label: 'Utility',
-  },
-  {
-    Component: Shadcn,
-    href: 'https://shadcn.dev',
+    Component: PythonIcon,
+    href: 'https://python.org',
     className: 'size-12',
-    label: 'UI lib',
+    label: 'Python',
   },
   {
-    Component: FramerMotion,
-    href: 'https://motion.dev/docs/animate',
-    className: 'size-12 dark:invert',
-    label: 'Animation',
-  },
-  {
-    Component: MdxIcon,
-    href: 'https://mdxjs.com',
+    Component: RIcon,
+    href: 'https://www.r-project.org/',
     className: 'size-12',
-    label: 'Markdown',
+    label: 'R',
   },
   {
-    Component: Umami,
-    href: 'https://umami.is',
-    className: 'size-12 dark:invert',
-    label: 'Analytics',
+    Component: DartIcon,
+    href: 'https://dart.dev/',
+    className: 'size-12',
+    label: 'Dart',
   },
   {
-    Component: Github,
-    href: 'https://github.com',
-    className: 'size-12 dark:invert',
-    label: 'Version',
+    Component: FlutterIcon,
+    href: 'https://flutter.dev/',
+    className: 'size-12',
+    label: 'Flutter',
   },
   {
-    Component: VercelLogoIcon,
+    Component: TensorflowIcon,
+    href: 'https://www.tensorflow.org/',
+    className: 'size-12',
+    label: 'TensorFlow',
+  },
+  {
+    Component: PandasIcon,
+    href: 'https://pandas.pydata.org/',
+    className: 'size-12',
+    label: 'Pandas',
+  },
+  {
+    Component: MatplotlibIcon,
+    href: 'https://matplotlib.org/',
+    className: 'size-12',
+    label: 'Matplotlib',
+  },
+  {
+    Component: AndroidStudioIcon,
+    href: 'https://developer.android.com/studio',
+    className: 'size-12',
+    label: 'Android Studio',
+  },
+  {
+    Component: VercelIcon,
     href: 'https://vercel.com',
     className: 'size-12',
-    label: 'Deploy',
+    label: 'Vercel',
   },
+  {
+    Component: KafkaIcon,
+    href: 'https://kafka.apache.org/',
+    className: 'size-12',
+    label: 'Kafka',
+  },
+  {
+    Component: GcpIcon,
+    href: 'https://cloud.google.com/',
+    className: 'size-12',
+    label: 'GCP',
+  },
+  {
+    Component: SupabaseIcon,
+    href: 'https://supabase.com/',
+    className: 'size-12',
+    label: 'Supabase',
+  },
+  {
+    Component: FlaskIcon,
+    href: 'https://flask.palletsprojects.com/',
+    className: 'size-12',
+    label: 'Flask',
+  },
+  {
+    Component: PostgresIcon,
+    href: 'https://www.postgresql.org/',
+    className: 'size-12',
+    label: 'PostgreSQL',
+  },
+  // {
+  //   Component: UnityIcon,
+  //   href: 'https://unity.com/',
+  //   className: 'size-12',
+  //   label: 'Unity',
+  // },
 ]
 export const inspirationWebsites = [
   { name: 'antfu.me', url: 'https://antfu.me/' },
@@ -90,83 +175,196 @@ export const inspirationWebsites = [
 ]
 export const topProjects = [
   {
-    videoSrc: 'echo-chat-AB1zhCP8soPOmnJJP7Fho36VpJgaFg.mp4',
-    imageSrc: '/images/project/echo.png',
-    title: 'Echo Chat',
+    imageSrc: '/images/project/deepfake-gan.png',
+    title: 'Deepfake Detection using GAN Model',
+    tags: ['Python', 'GANs', 'Keras', 'Flask'],
+    timeline: '2024',
+    tagline: 'Deep learning model to detect deepfake images using GANs.',
+    sourceCodeHref:
+      'https://github.com/srujankrishnaa/deepfake-detection-using-gan-model',
+    liveDemoHref: '',
+  },
+  {
+    imageSrc: '/images/project/educity.png',
+    title: 'EduCity (EDVISE App)',
     tags: [
-      'Nextjs',
-      'Express',
-      'Prisma',
+      'Unity',
+      'Flutter',
+      'Springboot',
+      'ARCore',
       'PostgreSQL',
-      'WebSockets',
-      'TailwindCSS',
-      'AWS',
+      'Gemini API',
+      'TensorFlow',
     ],
-    timeline: 'Nov 2024 - Dec 2024',
-    tagline: 'Real-time chat rooms',
-    sourceCodeHref: 'https://github.com/Rohit-Singh-Rawat/Echo-Chat',
-    liveDemoHref: 'https://echo.rsrcraft.me/',
-  },
-
-  {
-    videoSrc: 'space-uecizlixlpcAH1cmch9kYp12JQ0ryA.mp4',
-    imageSrc: '/images/project/Space.png',
-    title: 'Space',
-    tags: [
-      'Portfolio',
-      'Nextjs',
-      'Framer motion',
-      'Typescript',
-      'Shadcn UI',
-      'TailwindCSS',
-    ],
-    timeline: 'Aug 2024',
-    tagline: 'My personal website and blog ',
-    sourceCodeHref: 'https://github.com/Rohit-Singh-Rawat/Space',
-    liveDemoHref: 'https://rohitsinghrawat.tech/',
+    timeline: '2024',
+    tagline:
+      'Gamified learning platform where subjects are represented as cities.',
+    sourceCodeHref: 'https://github.com/srujankrishnaa/EduCity',
+    liveDemoHref: '',
   },
   {
-    imageSrc: '/images/project/Fit-flow.png',
-    title: 'Fit Flow',
-    videoSrc: 'fitflow-bxeIZzEYBBHqSqXUEa1ivzKo4Jq8Ck',
+    imageSrc: '/images/project/bonfire.png',
+    title: 'Bonfire',
+    tags: ['Flutter', 'Unity', 'Firebase', 'Dart', 'Dialogflow', 'LLM'],
+    timeline: '2025',
+    tagline: 'Therapy group community app with VR and AI features.',
+    sourceCodeHref: 'https://github.com/srujankrishnaa/Bonfire',
+    liveDemoHref: '',
+  },
+  {
+    imageSrc: '/images/project/mechido.png',
+    title: 'Mechido',
     tags: [
-      'Nextjs',
-      'Prisma',
+      'Flutter',
+      'Supabase',
       'PostgreSQL',
-      'Tailwind',
-      'TailwindCSS',
-      'Shadcn UI',
+      'Dart',
+      'Realtime Tracking',
+      'UI/UX Design',
     ],
-    timeline: 'Jun 2024 - July 2024',
-    tagline: 'StackOverFlow for Gym rat',
-    sourceCodeHref: 'https://github.com/Rohit-Singh-Rawat/Fit-Flow',
-    liveDemoHref: 'https://fit-flow-live.vercel.app/',
-  },
-  {
-    videoSrc: 'githubtimeline-PxWo4wrOFHi71ER3DdFrN1C8U2D0zE.mp4',
-    imageSrc: '/images/project/github timeline.png',
-    title: 'GitHub Timeline',
-    tags: ['Nextjs', 'Framer motion', 'Typescript', 'GraphQl', 'TailwindCSS'],
-    timeline: 'July 2024',
-    tagline: 'Visualize your GitHub activity in a timeline.',
-    sourceCodeHref: 'https://github.com/Rohit-Singh-Rawat/GitHub-Timeline',
-    liveDemoHref: 'https://git-hub-timeline.vercel.app/',
-  },
-  {
-    videoSrc: 'hikari-ya72znzpdAcgxLkGN3GhrKbeUVLx1z.mp4',
-    imageSrc: '/images/project/hikari.png',
-    title: 'Hikari',
-    tags: [
-      'React',
-      'Prisma',
-      'PostgreSQL',
-      'Tailwind',
-      'TailwindCSS',
-      'Cloudflare Workers',
-    ],
-    timeline: 'May 2024',
-    tagline: 'Create, manage, and share blogs.',
-    sourceCodeHref: 'https://github.com/Rohit-Singh-Rawat/Hikari',
-    liveDemoHref: 'https://hikari-zeta.vercel.app/',
+    timeline: '2025',
+    tagline: 'Vehicle service booking app with real-time mechanic tracking.',
+    sourceCodeHref: 'https://github.com/srujankrishnaa/mechido',
+    liveDemoHref: '',
   },
 ]
+
+export const frontendStack: TechIcon[] = [
+  {
+    name: 'Next.js',
+    Icon: TbBrandNextjs,
+  },
+  {
+    name: 'TypeScript',
+    Icon: BiLogoTypescript,
+  },
+  {
+    name: 'React.js',
+    Icon: FaReact,
+  },
+  {
+    name: 'TailwindCSS',
+    Icon: SiTailwindcss,
+  },
+  {
+    name: 'ChakraUI',
+    Icon: SiChakraui,
+  },
+]
+
+export const backendStack: TechIcon[] = [
+  {
+    name: 'Node.js',
+    Icon: FaNode,
+  },
+  {
+    name: 'Express.js',
+    Icon: SiExpress,
+  },
+  {
+    name: 'Prisma',
+    Icon: SiPrisma,
+  },
+  {
+    name: 'PostgreSQL',
+    Icon: BiLogoPostgresql,
+  },
+  {
+    name: 'MongoDB',
+    Icon: SiMongodb,
+  },
+]
+
+export const mobileStack: TechIcon[] = [
+  {
+    name: 'Dart',
+    Icon: SiDart,
+  },
+  {
+    name: 'Flutter',
+    Icon: SiFlutter,
+  },
+  {
+    name: 'Android Studio',
+    Icon: SiAndroidstudio,
+  },
+]
+
+export const devopsStack: TechIcon[] = [
+  {
+    name: 'Docker',
+    Icon: FaDocker,
+  },
+  {
+    name: 'AWS',
+    Icon: FaAws,
+  },
+  {
+    name: 'Google Cloud',
+    Icon: SiGooglecloud,
+  },
+  {
+    name: 'Vercel',
+    Icon: SiVercel,
+  },
+  {
+    name: 'Kafka',
+    Icon: SiApachekafka,
+  },
+  {
+    name: 'Supabase',
+    Icon: SiSupabase,
+  },
+]
+
+export const dataScienceStack: TechIcon[] = [
+  {
+    name: 'Python',
+    Icon: SiPython,
+  },
+  {
+    name: 'R',
+    Icon: SiR,
+  },
+  {
+    name: 'TensorFlow',
+    Icon: SiTensorflow,
+  },
+  {
+    name: 'NumPy',
+    Icon: SiNumpy,
+  },
+  {
+    name: 'Pandas',
+    Icon: SiPandas,
+  },
+  {
+    name: 'Matplotlib',
+    Icon: SiMatplotlib,
+  },
+]
+
+export const socialLinks = [
+  {
+    name: 'Discord',
+    href: 'https://discordapp.com/users/yourusername',
+    Icon: FaDiscord,
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://linkedin.com/in/g-srujan-krishna',
+    Icon: FaLinkedinIn,
+  },
+  {
+    name: 'Twitter/X',
+    href: 'https://twitter.com/yourtwitterhandle',
+    Icon: FaXTwitter,
+  },
+  {
+    name: 'GitHub',
+    href: 'https://github.com/srujankrishnaa',
+    Icon: FaGithub,
+  },
+]
+
+export const contactEmail = 'g.srujankrishna@example.com'

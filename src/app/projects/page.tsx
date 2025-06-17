@@ -61,7 +61,6 @@ const page = () => {
               key={index}
               delay={index * 0.2}
               imageSrc={project.imageSrc}
-              videoSrc={project.videoSrc}
               title={project.title}
               tags={project.tags}
               timeline={project.timeline}
@@ -76,19 +75,11 @@ const page = () => {
         <h1 className="my-14 text-xl">
           View more on{' '}
           <Link
-            href="https://github.com/Rohit-Singh-Rawat?tab=repositories"
+            href="https://github.com/srujankrishnaa"
             className="peer inline-flex items-center justify-start bg-gradient-to-r from-green-200 via-green-400 via-70% to-purple-500 bg-clip-text font-neu text-transparent"
             target="_blank"
           >
-            Github
-          </Link>
-          {' & '}
-          <Link
-            href="https://rsrcraft.me"
-            className="peer inline-flex items-center justify-start bg-gradient-to-r from-green-200 via-green-400 via-70% to-purple-700 bg-clip-text font-neu text-transparent"
-            target="_blank"
-          >
-            rsrcraft
+            GitHub
           </Link>
           <ArrowRight className="ml-2 inline-block size-4 rounded-full border border-transparent stroke-black stroke-1 transition-all duration-300 ease-linear peer-hover:-rotate-45 peer-hover:border-slate-950 peer-hover:stroke-[2px] dark:stroke-white dark:peer-hover:border-slate-50" />
         </h1>

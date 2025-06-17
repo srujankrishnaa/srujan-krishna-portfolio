@@ -135,16 +135,66 @@ body::-webkit-scrollbar-track {
     stroke-dashoffset: 0;
   }
 }
+/* Add these new styles to your existing globals.css */
+
+/* Enhanced bento cards with better shadows and gradients */
+.bento {
+  @apply transform-gpu flex-col gap-2 overflow-hidden rounded-xl bg-white/80 backdrop-blur-sm [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05),0_8px_32px_rgba(0,0,0,.02)] dark:bg-black/80 dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset,0_0_0_1px_rgba(255,255,255,.05)];
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento:hover {
+  @apply [box-shadow:0_0_0_1px_rgba(0,0,0,.05),0_4px_8px_rgba(0,0,0,.08),0_16px_32px_rgba(0,0,0,.08),0_12px_48px_rgba(0,0,0,.04)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff2f_inset,0_0_0_1px_rgba(255,255,255,.08),0_4px_16px_rgba(0,0,0,.2)];
+}
+
+/* Smooth gradient animations */
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Enhanced selection colors */
 ::selection {
   color: white;
-  background: rgb(14, 14, 14);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
+
 .dark::selection {
   color: black;
-  background: whitesmoke;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
-.bento {
-  @apply transform-gpu flex-col gap-2 overflow-hidden rounded-xl bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] dark:bg-black dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset];
+
+/* Smooth focus rings */
+.focus-ring {
+  @apply transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-black;
+}
+
+/* Enhanced scroll indicators */
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.dark body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
 }
 .githubStats {
   @apply w-[60%] flex-1 transform-gpu flex-col gap-2 overflow-hidden bg-white text-sm [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05),0_-20px_30px_-25px_#E8FFDB_inset] dark:bg-black dark:[border:1px_solid_rgba(255,255,255,.2)] dark:[box-shadow:0_-20px_25px_-25px_#4b523d_inset];

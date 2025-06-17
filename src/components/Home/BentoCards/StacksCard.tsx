@@ -1,98 +1,110 @@
+import React from 'react'
 import { Marquee } from '../Marquee'
 import Nextjs from '@/components/Icons/StackIcons/Nextjs'
 import { Html } from '@/components/Icons/StackIcons/Html'
 import { Css } from '@/components/Icons/StackIcons/css'
 import { Docker } from '@/components/Icons/StackIcons/docker'
-import { Express } from '@/components/Icons/StackIcons/express'
-import { Figma } from '@/components/Icons/StackIcons/figma'
-import { FramerMotion } from '@/components/Icons/StackIcons/FramerMotion'
 import { Git } from '@/components/Icons/StackIcons/git'
-import { Github } from '@/components/Icons/StackIcons/github'
-import { GithubActions } from '@/components/Icons/StackIcons/githubactions'
-import { Graphql } from '@/components/Icons/StackIcons/graphql'
-import { Java } from '@/components/Icons/StackIcons/java'
 import { JS } from '@/components/Icons/StackIcons/javascript'
-import { Mongodb } from '@/components/Icons/StackIcons/mongodb'
 import { Postgresql } from '@/components/Icons/StackIcons/postgresql'
-import { Postman } from '@/components/Icons/StackIcons/postman'
-import { Prisma } from '@/components/Icons/StackIcons/prisma'
 import { ReactIcon } from '@/components/Icons/StackIcons/react'
-import { Redis } from '@/components/Icons/StackIcons/redis'
-import { Sass } from '@/components/Icons/StackIcons/sass'
-import { Shadcn } from '@/components/Icons/StackIcons/Shadcn'
-import { Sql } from '@/components/Icons/StackIcons/sql'
-import { Tailwind } from '@/components/Icons/StackIcons/tailwindcss'
-import { Typescript } from '@/components/Icons/StackIcons/typescript'
-import { VsCode } from '@/components/Icons/StackIcons/VS'
-import { Webpack } from '@/components/Icons/StackIcons/webpack'
-import { WebSocket } from '@/components/Icons/StackIcons/Websocket'
-import { Cloudflare } from '@/components/Icons/StackIcons/Cloudflare'
-import React from 'react'
-import { NodejsIcon } from '@/components/Icons/StackIcons/nodejsIcon'
 import Stack from '@/components/Icons/Stack'
 import BentoCard from './BentoCard'
-import Vite from '@/components/Icons/StackIcons/vite'
+import Python from '@/components/Icons/StackIcons/python'
+import R from '@/components/Icons/StackIcons/r'
+import Dart from '@/components/Icons/StackIcons/dart'
+import Flutter from '@/components/Icons/StackIcons/flutter'
+import TensorFlow from '@/components/Icons/StackIcons/tensorflow'
+import NumPy from '@/components/Icons/StackIcons/numpy'
+import Pandas from '@/components/Icons/StackIcons/pandas'
+import Matplotlib from '@/components/Icons/StackIcons/matplotlib'
+import AndroidStudio from '@/components/Icons/StackIcons/androidstudio'
+import Vercel from '@/components/Icons/StackIcons/vercel'
+import Kafka from '@/components/Icons/StackIcons/kafka'
+import GCP from '@/components/Icons/StackIcons/gcp'
+import Supabase from '@/components/Icons/StackIcons/supabase'
+import Flask from '@/components/Icons/StackIcons/flask'
 
 const frontendTech: React.FC<React.SVGProps<SVGSVGElement>>[] = [
   Html,
   Css,
   JS,
-  Typescript,
+  Dart,
+  Flutter,
   ReactIcon,
   Nextjs,
-  Tailwind,
-  Sass,
-  FramerMotion,
-  Figma,
-  Sql,
-  Shadcn,
-  Vite,
-  Webpack,
 ]
 
-const backendAndTools: React.FC<React.SVGProps<SVGSVGElement>>[] = [
-  NodejsIcon,
-  Express,
-  Docker,
-  Prisma,
+const backendTech: React.FC<React.SVGProps<SVGSVGElement>>[] = [
   Postgresql,
-  Mongodb,
-  Redis,
-  Graphql,
-  Postman,
-  VsCode,
+  Supabase,
+  Flask,
+  Docker,
+]
+
+const dataScienceTech: React.FC<React.SVGProps<SVGSVGElement>>[] = [
+  Python,
+  R,
+  TensorFlow,
+  NumPy,
+  Pandas,
+  Matplotlib,
+]
+
+const toolsPlatforms: React.FC<React.SVGProps<SVGSVGElement>>[] = [
   Git,
-  Github,
-  GithubActions,
-  WebSocket,
-  Cloudflare,
-  Java,
+  AndroidStudio,
+  Vercel,
+  Kafka,
+  GCP,
 ]
 
 const StacksCard = ({ isForSmall = false }: { isForSmall?: boolean }) => {
   return (
-    <BentoCard className="group/stack col-span-5 row-span-1 h-56 p-4 xs:col-span-4 xs:row-span-2 lg:p-6">
+    <BentoCard className="group/stack col-span-5 row-span-1 h-[450px] p-6 xs:col-span-4 xs:row-span-2 lg:p-8">
       <div className="mb-3 flex items-center gap-2">
         <Stack className="size-4" />
         <h2 className="bg-gradient-to-r from-[#8ebac7] via-[#4d8b9d] to-[#2a4b55] bg-clip-text font-neu text-sm font-medium text-transparent">
           Stacks
         </h2>
       </div>
-      <Marquee gap="20px" className="py-4" fade pauseOnHover>
+      <div className="mb-4 text-xs text-gray-500">Frontend</div>
+      <Marquee gap="40px" className="py-2" fade pauseOnHover>
         {frontendTech.map((TechComponent, index) => (
           <TechComponent
             key={index}
             id={isForSmall ? `s-${index}` : `${index}`}
-            className="size-10 grayscale transition-all duration-500 ease-in-out hover:grayscale-0 dark:invert dark:hover:invert-0"
+            className="size-8 transition-all duration-500 ease-in-out"
           />
         ))}
       </Marquee>
-      <Marquee gap="20px" className="py-4" reverse fade pauseOnHover>
-        {backendAndTools.map((TechComponent, index) => (
+      <div className="mb-4 mt-4 text-xs text-gray-500">Backend</div>
+      <Marquee gap="40px" className="py-2" reverse fade pauseOnHover>
+        {backendTech.map((TechComponent, index) => (
           <TechComponent
             key={index}
-            id={isForSmall ? `s2-${index}` : `${index}2`}
-            className="size-10 grayscale transition-all duration-500 ease-in-out hover:grayscale-0 dark:invert dark:hover:invert-0"
+            id={isForSmall ? `b-${index}` : `b${index}`}
+            className="size-8 transition-all duration-500 ease-in-out"
+          />
+        ))}
+      </Marquee>
+      <div className="mb-4 mt-4 text-xs text-gray-500">Data Science</div>
+      <Marquee gap="40px" className="py-2" fade pauseOnHover>
+        {dataScienceTech.map((TechComponent, index) => (
+          <TechComponent
+            key={index}
+            id={isForSmall ? `d-${index}` : `d${index}`}
+            className="size-8 transition-all duration-500 ease-in-out"
+          />
+        ))}
+      </Marquee>
+      <div className="mb-4 mt-4 text-xs text-gray-500">Tools & Platforms</div>
+      <Marquee gap="40px" className="py-2" reverse fade pauseOnHover>
+        {toolsPlatforms.map((TechComponent, index) => (
+          <TechComponent
+            key={index}
+            id={isForSmall ? `t-${index}` : `t${index}`}
+            className="size-8 transition-all duration-500 ease-in-out"
           />
         ))}
       </Marquee>

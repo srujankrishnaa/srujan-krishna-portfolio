@@ -5,14 +5,7 @@ import { usePathname } from 'next/navigation'
 import ThemeSwitch from '../shared/ThemeSwitch'
 import MobileNavBar from '../shared/MobileNavbar'
 import HamburgerMenu from '../shared/HamburgerMenu'
-
-const navItems = [
-  { name: 'Work', href: '/work' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'About', href: '/about' },
-  { name: 'Playground', href: '/playground' },
-]
+import { navItems } from '@/lib/constants'
 
 const NavBar = () => {
   const path = usePathname()

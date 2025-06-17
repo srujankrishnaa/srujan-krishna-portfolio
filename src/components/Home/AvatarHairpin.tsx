@@ -2,7 +2,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import avatar from '../../../public/images/avatar.jpg'
+import profile from '../../../public/images/profile.png'
+
 const AvatarHairpin = () => {
   return (
     <div className="relative order-first shrink p-4 md:order-last md:p-4">
@@ -15,9 +16,8 @@ const AvatarHairpin = () => {
           className="relative z-[5] block size-20 max-h-20 max-w-20 overflow-hidden rounded bg-white shadow-xl ring-1 ring-slate-900/5"
         >
           <Image
-            src={avatar}
-            placeholder="blur"
-            alt="avatar"
+            src={profile}
+            alt="profile avatar"
             height={80}
             className="grayscale dark:shadow-[inset_-5px_-18px_38px_22px_#000000]"
             width={80}
