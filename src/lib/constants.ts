@@ -37,7 +37,7 @@ import {
   SiApachekafka,
   SiGooglecloud,
   SiSupabase,
-  SiFlask,
+  // SiFlask,
 } from 'react-icons/si'
 import {
   FaNode,
@@ -48,9 +48,9 @@ import {
   FaLinkedinIn,
   FaGithub,
 } from 'react-icons/fa'
-import { RiSpotifyFill } from 'react-icons/ri'
+// import { RiSpotifyFill } from 'react-icons/ri'
 import { FaXTwitter } from 'react-icons/fa6'
-import { GrGraphQl } from 'react-icons/gr'
+// import { GrGraphQl } from 'react-icons/gr'
 
 type NavItems = {
   name: string

@@ -1,8 +1,8 @@
 # Space
 
 <div align="center">
-  <a href="https://github.com/srujankrishnaa/Space">
-    <img src="/images/profile.jpg" alt="Srujan Krishna" width="100" />
+  <a href="https://github.com/srujankrishnaa/srujan-krishna-portfolio">
+    <img src="/images/srujan.png" alt="Srujan Krishna" width="100" />
   </a>
 
 <h3 align="center">Space</h3>
