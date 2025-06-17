@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://github.com/srujankrishnaa/srujan-krishna-portfolio">
-    <img src="/images/srujan.png" alt="Srujan Krishna" width="100" />
+    <img src="public/images/srujan.png" alt="Srujan Krishna" width="100" />
   </a>
 
 <h3 align="center">Space</h3>
@@ -24,14 +24,6 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li><a href="#aspiration">Aspiration</a></li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
     <li><a href="#license">License</a></li>
   </ol>
 </details>
@@ -48,39 +40,6 @@ Welcome, this is my personal portfolio, featuring my projects, skills, and a bit
 - ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 - ![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=shadcnui&logoColor=white)
 - ![Framer](https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue)
-
-## Aspiration
-
-Thanks to all the sources of inspiration that guided and motivated me throughout the creation of this portfolio. Inspired by many, built by one.
-
-<!-- GETTING STARTED -->
-
-## Getting Started
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/srujankrishnaa/Space.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-3. Set up your environment variables as needed.
-4. Start the development server:
-   ```sh
-   npm run dev
-   ```
 
 ## License
 
