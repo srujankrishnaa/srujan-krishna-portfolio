@@ -19,7 +19,7 @@ export const Intro = () => {
             G. Srujan Krishna
           </h1>
           <div className="mt-3 flex items-center gap-2">
-            <div className="h-2 w-2 animate-pulse rounded-full bg-green-500"></div>
+            <div className="size-2 animate-pulse rounded-full bg-green-500"></div>
             <p className="font-neu text-xl text-gray-400 md:text-2xl">
               Full Stack Engineer
             </p>
@@ -36,7 +36,7 @@ export const Intro = () => {
           </div>
         </motion.div>
         <motion.div
-          className="group relative flex-shrink-0"
+          className="group relative shrink-0"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}

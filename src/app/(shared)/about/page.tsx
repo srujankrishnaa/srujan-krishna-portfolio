@@ -90,7 +90,7 @@ const page = () => {
               This site is crafted with Next.js, Tailwind CSS, and MDX, and uses Umami for
               analytics, with Vercel handling the hosting. Check out the code on{" "}
               <a 
-                href="https://github.com/srujankrishnaa/Space" 
+                href="https://github.com/srujankrishnaa/srujan-krishna-portfolio" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="font-medium text-zinc-900 underline dark:text-zinc-100"

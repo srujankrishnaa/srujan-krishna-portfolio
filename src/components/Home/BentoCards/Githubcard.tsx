@@ -8,7 +8,7 @@ const GithubCard = () => {
       <Link
         href={'https://github.com/srujankrishnaa'}
         target="_blank"
-        className="flex h-full w-full flex-col items-center justify-center p-4"
+        className="flex size-full flex-col items-center justify-center p-4"
       >
         <Github className="mb-2 size-16" />
         <span className="text-center text-xl font-semibold">
