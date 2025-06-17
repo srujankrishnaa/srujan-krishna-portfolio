@@ -78,7 +78,7 @@ const StacksCard = ({ isForSmall = false }: { isForSmall?: boolean }) => {
           />
         ))}
       </Marquee>
-      <div className="mb-4 mt-4 text-xs text-gray-500">Backend</div>
+      <div className="my-4 text-xs text-gray-500">Backend</div>
       <Marquee gap="40px" className="py-2" reverse fade pauseOnHover>
         {backendTech.map((TechComponent, index) => (
           <TechComponent
@@ -88,7 +88,7 @@ const StacksCard = ({ isForSmall = false }: { isForSmall?: boolean }) => {
           />
         ))}
       </Marquee>
-      <div className="mb-4 mt-4 text-xs text-gray-500">Data Science</div>
+      <div className="my-4 text-xs text-gray-500">Data Science</div>
       <Marquee gap="40px" className="py-2" fade pauseOnHover>
         {dataScienceTech.map((TechComponent, index) => (
           <TechComponent
@@ -98,7 +98,7 @@ const StacksCard = ({ isForSmall = false }: { isForSmall?: boolean }) => {
           />
         ))}
       </Marquee>
-      <div className="mb-4 mt-4 text-xs text-gray-500">Tools & Platforms</div>
+      <div className="my-4 text-xs text-gray-500">Tools & Platforms</div>
       <Marquee gap="40px" className="py-2" reverse fade pauseOnHover>
         {toolsPlatforms.map((TechComponent, index) => (
           <TechComponent

@@ -44,7 +44,7 @@ const Bento = () => {
           <p className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text font-neu text-3xl font-bold text-transparent">
             Bento
           </p>
-          <div className="absolute -bottom-1 left-0 h-0.5 w-full scale-x-0 transform bg-gradient-to-r from-purple-600 to-blue-600 transition-transform duration-300 group-hover/bentoi:scale-x-100"></div>
+          <div className="absolute -bottom-1 left-0 h-0.5 w-full scale-x-0 bg-gradient-to-r from-purple-600 to-blue-600 transition-transform duration-300 group-hover/bentoi:scale-x-100"></div>
         </div>
         <BentoIcon className="w-6 transition-transform duration-300 group-hover/bentoi:rotate-12" />
         <Chopstiks className="w-6 -translate-x-6 -translate-y-1 transition-transform duration-300 group-hover/bentoi:translate-x-0" />

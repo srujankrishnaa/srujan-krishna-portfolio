@@ -62,7 +62,7 @@ const AchievementsPage = () => {
               <h2 className="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-3xl font-semibold text-transparent">
                 Awards
               </h2>
-              <div className="absolute -bottom-1 left-0 h-0.5 w-full scale-x-0 transform bg-gradient-to-r from-amber-500 to-orange-600 transition-transform duration-300 group-hover:scale-x-100"></div>
+              <div className="absolute -bottom-1 left-0 h-0.5 w-full scale-x-0 bg-gradient-to-r from-amber-500 to-orange-600 transition-transform duration-300 group-hover:scale-x-100"></div>
             </div>
             <div className="size-8 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 p-0.5">
               <div className="flex size-full items-center justify-center rounded-full bg-white dark:bg-black">
@@ -106,7 +106,7 @@ const AchievementsPage = () => {
                     alt="IIT Hyderabad Award"
                     width={500}
                     height={300}
-                    className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="h-64 w-full object-cover duration-300 group-hover:scale-105"
                   />
                 </div>
               </div>
@@ -141,7 +141,7 @@ const AchievementsPage = () => {
                     alt="BITS Goa Award"
                     width={500}
                     height={300}
-                    className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="h-64 w-full object-cover duration-300 group-hover:scale-105"
                   />
                 </div>
               </div>
@@ -176,7 +176,7 @@ const AchievementsPage = () => {
                     alt="NCAT Ranking Certificate"
                     width={500}
                     height={300}
-                    className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="h-64 w-full object-cover duration-300 group-hover:scale-105"
                   />
                 </div>
               </div>
@@ -198,7 +198,7 @@ const AchievementsPage = () => {
               <h2 className="bg-gradient-to-r from-blue-500 to-cyan-600 bg-clip-text text-3xl font-semibold text-transparent">
                 Leadership Roles
               </h2>
-              <div className="absolute -bottom-1 left-0 h-0.5 w-full scale-x-0 transform bg-gradient-to-r from-blue-500 to-cyan-600 transition-transform duration-300 group-hover:scale-x-100"></div>
+              <div className="absolute -bottom-1 left-0 h-0.5 w-full scale-x-0 bg-gradient-to-r from-blue-500 to-cyan-600 transition-transform duration-300 group-hover:scale-x-100"></div>
             </div>
             <div className="size-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-600 p-0.5">
               <div className="flex size-full items-center justify-center rounded-full bg-white dark:bg-black">
@@ -262,7 +262,7 @@ const AchievementsPage = () => {
               <h2 className="bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-3xl font-semibold text-transparent">
                 Certifications
               </h2>
-              <div className="absolute -bottom-1 left-0 h-0.5 w-full scale-x-0 transform bg-gradient-to-r from-green-500 to-emerald-600 transition-transform duration-300 group-hover:scale-x-100"></div>
+              <div className="absolute -bottom-1 left-0 h-0.5 w-full scale-x-0 bg-gradient-to-r from-green-500 to-emerald-600 transition-transform duration-300 group-hover:scale-x-100"></div>
             </div>
             <div className="size-8 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 p-0.5">
               <div className="flex size-full items-center justify-center rounded-full bg-white dark:bg-black">
