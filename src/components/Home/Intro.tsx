@@ -62,7 +62,7 @@ export const Intro = () => {
       >
         <div className="space-y-6">
           <p className="text-xl leading-relaxed">
-            Hi, I\'m{' '}
+            Hi, I'm{' '}
             <span className="font-semibold text-zinc-800 dark:text-zinc-200">
               G.Srujan Krishna
             </span>
@@ -89,7 +89,7 @@ export const Intro = () => {
                 impact.
               </p>
               <p className="leading-relaxed">
-                Currently, I\'m diving deeper into product thinking, backend
+                Currently, I'm diving deeper into product thinking, backend
                 architecture, and UI innovation to build the next generation of
                 apps.
               </p>

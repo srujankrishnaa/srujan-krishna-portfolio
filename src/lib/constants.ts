@@ -15,7 +15,7 @@ import { Postgresql as PostgresIcon } from '@/components/Icons/StackIcons/postgr
 // import UnityIcon from '@/components/Icons/StackIcons/unity' // Uncomment if available
 
 import type React from 'react'
-import { TechIcon } from './types'
+// import { TechIcon } from './types' // Removed: TechIcon moved directly below
 import { TbBrandNextjs } from 'react-icons/tb'
 import { BiLogoTypescript, BiLogoPostgresql } from 'react-icons/bi'
 import {
@@ -31,13 +31,13 @@ import {
   SiTensorflow,
   SiNumpy,
   SiPandas,
-  SiMatplotlib,
   SiAndroidstudio,
   SiVercel,
   SiApachekafka,
   SiGooglecloud,
   SiSupabase,
-  // SiFlask,
+  // Remove this import since it's not available
+  // SiMatplotlib,
 } from 'react-icons/si'
 import {
   FaNode,
@@ -48,9 +48,22 @@ import {
   FaLinkedinIn,
   FaGithub,
 } from 'react-icons/fa'
-// import { RiSpotifyFill } from 'react-icons/ri'
 import { FaXTwitter } from 'react-icons/fa6'
-// import { GrGraphQl } from 'react-icons/gr'
+
+// Defining TechIcon interface directly in constants.ts
+export interface TechIcon {
+  Component: React.FC<{ className?: string }>
+  href: string
+  className: string
+  label: string
+  name: string
+}
+
+// Add a new interface for stack icons
+export interface StackIcon {
+  name: string
+  Icon: React.ComponentType<any>
+}
 
 type NavItems = {
   name: string
@@ -63,96 +76,105 @@ export const navItems: NavItems = [
   { name: 'About', href: '/about' },
 ]
 
-interface IconData {
-  Component: React.FC<{ className?: string }>
-  href: string
-  className: string
-  label: string
-}
-export const iconData: IconData[] = [
+// Removed IconData interface and directly use TechIcon for iconData
+export const iconData: TechIcon[] = [
   {
     Component: PythonIcon,
     href: 'https://python.org',
     className: 'size-12',
     label: 'Python',
+    name: 'Python'
   },
   {
     Component: RIcon,
     href: 'https://www.r-project.org/',
     className: 'size-12',
     label: 'R',
+    name: 'R'
   },
   {
     Component: DartIcon,
     href: 'https://dart.dev/',
     className: 'size-12',
     label: 'Dart',
+    name: 'Dart'
   },
   {
     Component: FlutterIcon,
     href: 'https://flutter.dev/',
     className: 'size-12',
     label: 'Flutter',
+    name: 'Flutter'
   },
   {
     Component: TensorflowIcon,
     href: 'https://www.tensorflow.org/',
     className: 'size-12',
     label: 'TensorFlow',
+    name: 'TensorFlow'
   },
   {
     Component: PandasIcon,
     href: 'https://pandas.pydata.org/',
     className: 'size-12',
     label: 'Pandas',
+    name: 'Pandas'
   },
   {
     Component: MatplotlibIcon,
     href: 'https://matplotlib.org/',
     className: 'size-12',
     label: 'Matplotlib',
+    name: 'Matplotlib'
   },
   {
     Component: AndroidStudioIcon,
     href: 'https://developer.android.com/studio',
     className: 'size-12',
     label: 'Android Studio',
+    name: 'Android Studio'
   },
   {
     Component: VercelIcon,
     href: 'https://vercel.com',
     className: 'size-12',
     label: 'Vercel',
+    name: 'Vercel'
   },
   {
     Component: KafkaIcon,
     href: 'https://kafka.apache.org/',
     className: 'size-12',
     label: 'Kafka',
+    name: 'Kafka'
   },
   {
     Component: GcpIcon,
     href: 'https://cloud.google.com/',
     className: 'size-12',
     label: 'GCP',
+    name: 'GCP'
   },
   {
     Component: SupabaseIcon,
     href: 'https://supabase.com/',
     className: 'size-12',
     label: 'Supabase',
+    name: 'Supabase'
   },
   {
     Component: FlaskIcon,
     href: 'https://flask.palletsprojects.com/',
     className: 'size-12',
     label: 'Flask',
+    name: 'Flask'
   },
   {
     Component: PostgresIcon,
     href: 'https://www.postgresql.org/',
     className: 'size-12',
     label: 'PostgreSQL',
+    name: 'PostgreSQL'
   },
   // {
   //   Component: UnityIcon,
@@ -229,7 +251,7 @@ export const topProjects = [
   },
 ]
 
-export const frontendStack: TechIcon[] = [
+export const frontendStack: StackIcon[] = [
   {
     name: 'Next.js',
     Icon: TbBrandNextjs,
@@ -252,7 +274,7 @@ export const frontendStack: TechIcon[] = [
   },
 ]
 
-export const backendStack: TechIcon[] = [
+export const backendStack: StackIcon[] = [
   {
     name: 'Node.js',
     Icon: FaNode,
@@ -275,7 +297,7 @@ export const backendStack: TechIcon[] = [
   },
 ]
 
-export const mobileStack: TechIcon[] = [
+export const mobileStack: StackIcon[] = [
   {
     name: 'Dart',
     Icon: SiDart,
@@ -290,7 +312,7 @@ export const mobileStack: TechIcon[] = [
   },
 ]
 
-export const devopsStack: TechIcon[] = [
+export const devopsStack: StackIcon[] = [
   {
     name: 'Docker',
     Icon: FaDocker,
@@ -317,7 +339,7 @@ export const devopsStack: TechIcon[] = [
   },
 ]
 
-export const dataScienceStack: TechIcon[] = [
+export const dataScienceStack: StackIcon[] = [
   {
     name: 'Python',
     Icon: SiPython,
@@ -340,7 +362,7 @@ export const dataScienceStack: TechIcon[] = [
   },
   {
     name: 'Matplotlib',
-    Icon: SiMatplotlib,
+    Icon: MatplotlibIcon, // This is now correctly using your custom MatplotlibIcon
   },
 ]
 

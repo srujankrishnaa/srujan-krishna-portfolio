@@ -2,13 +2,13 @@
 
 <div align="center">
   <a href="https://github.com/srujankrishnaa/srujan-krishna-portfolio">
-    <img src="public/images/srujan.png" alt="Srujan Krishna" width="200" />
+    <img src="public/images/srujan.png" alt="Srujan Krishna" width="500" />
   </a>
 
 <h3 align="center">Space</h3>
 
   <p align="center">
-    My Portfolio and blogs
+    My Portfolio 
     <br />
     <br />
     <a href="mailto:srujankrishnac1@gmail.com">Contact Me</a>
