@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://github.com/srujankrishnaa/srujan-krishna-portfolio">
-    <img src="public/images/srujan.png" alt="Srujan Krishna" width="100" />
+    <img src="public/images/srujan.png" alt="Srujan Krishna" width="200" />
   </a>
 
 <h3 align="center">Space</h3>
