@@ -83,98 +83,98 @@ export const iconData: TechIcon[] = [
     href: 'https://python.org',
     className: 'size-12',
     label: 'Python',
-    name: 'Python'
+    name: 'Python',
   },
   {
     Component: RIcon,
     href: 'https://www.r-project.org/',
     className: 'size-12',
     label: 'R',
-    name: 'R'
+    name: 'R',
   },
   {
     Component: DartIcon,
     href: 'https://dart.dev/',
     className: 'size-12',
     label: 'Dart',
-    name: 'Dart'
+    name: 'Dart', // Add comma here
   },
   {
     Component: FlutterIcon,
     href: 'https://flutter.dev/',
     className: 'size-12',
     label: 'Flutter',
-    name: 'Flutter'
+    name: 'Flutter', // Add comma here
   },
   {
     Component: TensorflowIcon,
     href: 'https://www.tensorflow.org/',
     className: 'size-12',
     label: 'TensorFlow',
-    name: 'TensorFlow'
+    name: 'TensorFlow', // Add comma here
   },
   {
     Component: PandasIcon,
     href: 'https://pandas.pydata.org/',
     className: 'size-12',
     label: 'Pandas',
-    name: 'Pandas'
+    name: 'Pandas', // Add comma here
   },
   {
     Component: MatplotlibIcon,
     href: 'https://matplotlib.org/',
     className: 'size-12',
     label: 'Matplotlib',
-    name: 'Matplotlib'
+    name: 'Matplotlib', // Add comma here
   },
   {
     Component: AndroidStudioIcon,
     href: 'https://developer.android.com/studio',
     className: 'size-12',
     label: 'Android Studio',
-    name: 'Android Studio'
+    name: 'Android Studio', // Add comma here
   },
   {
     Component: VercelIcon,
     href: 'https://vercel.com',
     className: 'size-12',
     label: 'Vercel',
-    name: 'Vercel'
+    name: 'Vercel', // Add comma here
   },
   {
     Component: KafkaIcon,
     href: 'https://kafka.apache.org/',
     className: 'size-12',
     label: 'Kafka',
-    name: 'Kafka'
+    name: 'Kafka', // Add comma here
   },
   {
     Component: GcpIcon,
     href: 'https://cloud.google.com/',
     className: 'size-12',
     label: 'GCP',
-    name: 'GCP'
+    name: 'GCP', // Add comma here
   },
   {
     Component: SupabaseIcon,
     href: 'https://supabase.com/',
     className: 'size-12',
     label: 'Supabase',
-    name: 'Supabase'
+    name: 'Supabase', // Add comma here
   },
   {
     Component: FlaskIcon,
     href: 'https://flask.palletsprojects.com/',
     className: 'size-12',
     label: 'Flask',
-    name: 'Flask'
+    name: 'Flask', // Add comma here
   },
   {
     Component: PostgresIcon,
     href: 'https://www.postgresql.org/',
     className: 'size-12',
     label: 'PostgreSQL',
-    name: 'PostgreSQL'
+    name: 'PostgreSQL', // Add comma here
   },
   // {
   //   Component: UnityIcon,
