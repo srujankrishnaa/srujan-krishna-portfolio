@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 231 62% 4%;
+  --foreground: 210 40% 98%;
+  --card: 232 44% 8%;
+  --card-foreground: 210 40% 98%;
+  --primary: 188 94% 62%;
+  --primary-foreground: 229 62% 6%;
+  --secondary: 245 42% 17%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 232 28% 16%;
+  --muted-foreground: 218 18% 72%;
+  --accent: 262 84% 65%;
+  --accent-foreground: 210 40% 98%;
+  --border: 228 26% 22%;
+  --input: 228 26% 22%;
+  --ring: 188 94% 62%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #030512;
+  color: hsl(var(--foreground));
+}
+
+::selection {
+  background: rgba(103, 232, 249, 0.28);
+  color: white;
+}
+
+.phone-screen-mask {
+  clip-path: inset(0 round 36px);
+}
+
+.bg-scanline {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.035) 1px,
+    transparent 1px
+  );
+  background-size: 100% 6px;
+}
+
+.star-field,
+.star-field::after {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 12% 28%, rgba(255,255,255,.7) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 28% 18%, rgba(125,211,252,.75) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 42% 72%, rgba(255,255,255,.65) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 56% 34%, rgba(196,181,253,.8) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 76% 52%, rgba(255,255,255,.7) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 88% 20%, rgba(125,211,252,.75) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 92% 84%, rgba(255,255,255,.6) 0 1px, transparent 1.5px);
+  background-size: 560px 560px;
+  content: "";
+}
+
+.star-field::after {
+  opacity: .45;
+  transform: translateY(260px);
+}
+
+/* ── CPU Architecture Animation ── */
+.cpu-architecture {
+  offset-anchor: 10px 0px;
+  animation: cpu-animation-path;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.75, -0.01, 0, 0.99);
+}
+
+.cpu-line-1 {
+  offset-path: path("M 10 20 h 79.5 q 5 0 5 5 v 30");
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+.cpu-line-2 {
+  offset-path: path("M 180 10 h -69.7 q -5 0 -5 5 v 40");
+  animation-delay: 6s;
+  animation-duration: 2s;
+}
+.cpu-line-3 {
+  offset-path: path("M 130 20 v 21.8 q 0 5 -5 5 h -25");
+  animation-delay: 4s;
+  animation-duration: 6s;
+}
+.cpu-line-4 {
+  offset-path: path("M 170 80 v -21.8 q 0 -5 -5 -5 h -65");
+  animation-delay: 3s;
+  animation-duration: 3s;
+}
+.cpu-line-5 {
+  offset-path: path("M 135 65 h 15 q 5 0 5 5 v 10 q 0 5 -5 5 h -39.8 q -5 0 -5 -5 v -35");
+  animation-delay: 9s;
+  animation-duration: 4s;
+}
+.cpu-line-6 {
+  offset-path: path("M 94.8 95 v -46");
+  animation-delay: 3s;
+  animation-duration: 7s;
+}
+.cpu-line-7 {
+  offset-path: path("M 88 88 v -15 q 0 -5 -5 -5 h -10 q -5 0 -5 -5 v -5 q 0 -5 5 -5 h 28");
+  animation-delay: 4s;
+  animation-duration: 4s;
+}
+.cpu-line-8 {
+  offset-path: path("M 30 30 h 25 q 5 0 5 5 v 6.5 q 0 5 5 5 h 35");
+  animation-delay: 3s;
+  animation-duration: 3s;
+}
+
+@keyframes cpu-animation-path {
+  0% { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
+}
