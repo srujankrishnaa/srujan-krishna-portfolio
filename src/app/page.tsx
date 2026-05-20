@@ -220,48 +220,7 @@ function SiteNav({ isDark }: { isDark?: boolean }) {
 }
 
 function RetroHero({ isGoldMode, onToggle }: { isGoldMode: boolean; onToggle: () => void }) {
-  // Dynamically position the "Hey!" bubble based on browser zoom and screen size
-  const [bubbleStyle, setBubbleStyle] = useState({ left: "90%", top: "38.5%" });
 
-  useEffect(() => {
-    const updatePosition = () => {
-      const W = window.innerWidth;
-      const H = window.innerHeight;
-
-      // Model the centerpiece container's layout exactly:
-      // w = w-[min(44vw,640px)] min-w-[340px]
-      const w = Math.max(Math.min(W * 0.44, 640), 340);
-      // left-[66%] -translate-x-1/2
-      const containerLeft = W * 0.66 - w / 2;
-      // h-[78%] bottom-[6%]
-      const containerHeight = H * 0.78;
-      const containerTop = H * 0.16;
-
-      // Align bubble perfectly relative to the character centerpiece container.
-      // 0.93 width offset and 0.35 height offset positions the bottom center
-      // of the speech bubble precisely above the hair of the character.
-      const bubbleLeft = containerLeft + 0.93 * w;
-      const bubbleTop = containerTop + 0.35 * containerHeight;
-
-      // Keep within safe viewport boundaries (percentage values)
-      let leftPercent = (bubbleLeft / W) * 100;
-      if (leftPercent > 92) leftPercent = 92;
-      if (leftPercent < 5) leftPercent = 5;
-
-      let topPercent = (bubbleTop / H) * 100;
-      if (topPercent > 90) topPercent = 90;
-      if (topPercent < 5) topPercent = 5;
-
-      setBubbleStyle({
-        left: `${leftPercent}%`,
-        top: `${topPercent}%`,
-      });
-    };
-
-    updatePosition();
-    window.addEventListener("resize", updatePosition);
-    return () => window.removeEventListener("resize", updatePosition);
-  }, []);
   return (
     <section
       id="home"
@@ -364,7 +323,7 @@ function RetroHero({ isGoldMode, onToggle }: { isGoldMode: boolean; onToggle: ()
         </p>
       </motion.div>
 
-      {/* ── Character image ── */}
+      {/* ── Character image + Hey bubble (anchored inside container) ── */}
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -389,44 +348,44 @@ function RetroHero({ isGoldMode, onToggle }: { isGoldMode: boolean; onToggle: ()
                 : "none",
             }}
           />
+          {/* ── "Hey!" speech bubble — anchored above the phone in the right hand ── */}
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.7,
+              type: "spring",
+              stiffness: 400,
+              damping: 15,
+            }}
+            className="absolute z-30 origin-bottom"
+            style={{ left: "65.5%", top: "62%" }}
+          >
+            <div
+              className="relative rounded-lg border-[3px] px-5 py-2.5 font-mono text-xl font-black transition-colors duration-700"
+              style={{
+                backgroundColor: isGoldMode ? "#1a1a2e" : "#fff",
+                borderColor: isGoldMode ? "#d8bd10" : "#000",
+                color: isGoldMode ? "#d8bd10" : "#000",
+                boxShadow: isGoldMode
+                  ? "4px 4px 0 #d8bd10"
+                  : "4px 4px 0 #000",
+              }}
+            >
+              Hey!
+              {/* downward tail — points toward phone below */}
+              <div
+                className="absolute -bottom-2 left-1/2 h-0 w-0 -translate-x-1/2 border-l-[8px] border-r-[8px] border-t-[8px] border-l-transparent border-r-transparent transition-colors duration-700"
+                style={{ borderTopColor: isGoldMode ? "#d8bd10" : "#000" }}
+              />
+              <div
+                className="absolute -bottom-[5px] left-1/2 h-0 w-0 -translate-x-1/2 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent transition-colors duration-700"
+                style={{ borderTopColor: isGoldMode ? "#1a1a2e" : "#fff" }}
+              />
+            </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
-
-      {/* ── "Hey!" speech bubble — positioned relative to section ── */}
-      <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{
-          duration: 0.5,
-          delay: 0.7,
-          type: "spring",
-          stiffness: 400,
-          damping: 15,
-        }}
-        className="absolute z-20 origin-bottom"
-        style={bubbleStyle}
-      >
-        <div
-          className="relative rounded-lg border-[3px] px-5 py-2.5 font-mono text-xl font-black shadow-[4px_4px_0_#000] transition-colors duration-700"
-          style={{
-            backgroundColor: isGoldMode ? "#1a1a2e" : "#fff",
-            borderColor: isGoldMode ? "#d8bd10" : "#000",
-            color: isGoldMode ? "#d8bd10" : "#000",
-            boxShadow: isGoldMode
-              ? "4px 4px 0 #d8bd10"
-              : "4px 4px 0 #000",
-          }}
-        >
-          Hey!
-          <div
-            className="absolute -bottom-2 left-1/2 h-0 w-0 -translate-x-1/2 border-l-[8px] border-r-[8px] border-t-[8px] border-l-transparent border-r-transparent transition-colors duration-700"
-            style={{ borderTopColor: isGoldMode ? "#d8bd10" : "#000" }}
-          />
-          <div
-            className="absolute -bottom-[5px] left-1/2 h-0 w-0 -translate-x-1/2 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent transition-colors duration-700"
-            style={{ borderTopColor: isGoldMode ? "#1a1a2e" : "#fff" }}
-          />
-        </div>
       </motion.div>
 
 
