@@ -220,7 +220,48 @@ function SiteNav({ isDark }: { isDark?: boolean }) {
 }
 
 function RetroHero({ isGoldMode, onToggle }: { isGoldMode: boolean; onToggle: () => void }) {
+  // Dynamically position the "Hey!" bubble based on browser zoom and screen size
+  const [bubbleStyle, setBubbleStyle] = useState({ left: "90%", top: "38.5%" });
 
+  useEffect(() => {
+    const updatePosition = () => {
+      const W = window.innerWidth;
+      const H = window.innerHeight;
+
+      // Model the centerpiece container's layout exactly:
+      // w = w-[min(44vw,640px)] min-w-[340px]
+      const w = Math.max(Math.min(W * 0.44, 640), 340);
+      // left-[66%] -translate-x-1/2
+      const containerLeft = W * 0.66 - w / 2;
+      // h-[78%] bottom-[6%]
+      const containerHeight = H * 0.78;
+      const containerTop = H * 0.16;
+
+      // Align bubble perfectly relative to the character centerpiece container.
+      // 0.93 width offset and 0.35 height offset positions the bottom center
+      // of the speech bubble precisely above the hair of the character.
+      const bubbleLeft = containerLeft + 0.93 * w;
+      const bubbleTop = containerTop + 0.35 * containerHeight;
+
+      // Keep within safe viewport boundaries (percentage values)
+      let leftPercent = (bubbleLeft / W) * 100;
+      if (leftPercent > 92) leftPercent = 92;
+      if (leftPercent < 5) leftPercent = 5;
+
+      let topPercent = (bubbleTop / H) * 100;
+      if (topPercent > 90) topPercent = 90;
+      if (topPercent < 5) topPercent = 5;
+
+      setBubbleStyle({
+        left: `${leftPercent}%`,
+        top: `${topPercent}%`,
+      });
+    };
+
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+    return () => window.removeEventListener("resize", updatePosition);
+  }, []);
   return (
     <section
       id="home"
@@ -351,7 +392,7 @@ function RetroHero({ isGoldMode, onToggle }: { isGoldMode: boolean; onToggle: ()
         </motion.div>
       </motion.div>
 
-      {/* ── "Hey!" speech bubble ── */}
+      {/* ── "Hey!" speech bubble — positioned relative to section ── */}
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -362,10 +403,11 @@ function RetroHero({ isGoldMode, onToggle }: { isGoldMode: boolean; onToggle: ()
           stiffness: 400,
           damping: 15,
         }}
-        className="absolute left-[88%] top-[44.5%] z-20"
+        className="absolute z-20 origin-bottom"
+        style={bubbleStyle}
       >
         <div
-          className="rounded-lg border-[3px] px-5 py-2.5 font-mono text-xl font-black shadow-[4px_4px_0_#000] transition-colors duration-700"
+          className="relative rounded-lg border-[3px] px-5 py-2.5 font-mono text-xl font-black shadow-[4px_4px_0_#000] transition-colors duration-700"
           style={{
             backgroundColor: isGoldMode ? "#1a1a2e" : "#fff",
             borderColor: isGoldMode ? "#d8bd10" : "#000",
@@ -386,6 +428,7 @@ function RetroHero({ isGoldMode, onToggle }: { isGoldMode: boolean; onToggle: ()
           />
         </div>
       </motion.div>
+
 
       {/* ── Retro "Are you ready??" dialog ── */}
       <motion.div
