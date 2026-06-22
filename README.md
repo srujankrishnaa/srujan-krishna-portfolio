@@ -38,5 +38,3 @@ Build for production:
 npm run build
 ```
 
-Open `http://localhost:3000` to view the site locally.
-
