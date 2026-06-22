@@ -28,6 +28,7 @@ details/
 
 # local screenshots/review artifacts
 portfolio-*.png
+hero_check*.png
 
 # OS/editor noise
 .DS_Store

@@ -3,7 +3,7 @@ import React, { useEffect, useState, memo } from 'react';
 
 // --- Types ---
 type GlowColor = 'cyan' | 'purple' | 'orange' | 'blue' | 'green' | 'pink';
-type DomainKey = 'frontend' | 'backend' | 'data' | 'database' | 'cloud' | 'ai';
+type DomainKey = 'languages' | 'frontend' | 'backend' | 'data' | 'database' | 'cloud' | 'ai';
 
 interface SkillConfig {
   id: string;
@@ -23,6 +23,15 @@ const dIcon = (name: string, variant = 'original') =>
 
 // --- Domain definitions ---
 const domains: Record<DomainKey, { label: string; glow: GlowColor; skills: Omit<SkillConfig, 'orbitRadius' | 'size' | 'speed' | 'phaseShift' | 'glowColor'>[] }> = {
+  languages: {
+    label: 'Languages',
+    glow: 'cyan',
+    skills: [
+      { id: 'python', label: 'Python', color: '#3776AB', logo: dIcon('python') },
+      { id: 'cpp', label: 'C++', color: '#00599C', logo: dIcon('cplusplus') },
+      { id: 'sql', label: 'SQL', color: '#336791', logo: dIcon('azuresqldatabase', 'plain') },
+    ],
+  },
   frontend: {
     label: 'Frontend',
     glow: 'cyan',
@@ -39,11 +48,9 @@ const domains: Record<DomainKey, { label: string; glow: GlowColor; skills: Omit<
     label: 'Backend',
     glow: 'green',
     skills: [
-      { id: 'python', label: 'Python', color: '#3776AB', logo: dIcon('python') },
       { id: 'node', label: 'Node.js', color: '#339933', logo: dIcon('nodejs') },
       { id: 'express', label: 'Express', color: '#fff', logo: dIcon('express', 'original') },
       { id: 'fastapi', label: 'FastAPI', color: '#009688', logo: dIcon('fastapi', 'original') },
-      { id: 'cpp', label: 'C++', color: '#00599C', logo: dIcon('cplusplus') },
     ],
   },
   data: {
@@ -59,7 +66,6 @@ const domains: Record<DomainKey, { label: string; glow: GlowColor; skills: Omit<
     label: 'Databases',
     glow: 'blue',
     skills: [
-      { id: 'sql', label: 'SQL', color: '#336791', logo: dIcon('azuresqldatabase', 'plain') },
       { id: 'postgres', label: 'PostgreSQL', color: '#336791', logo: dIcon('postgresql') },
       { id: 'snowflake', label: 'Snowflake', color: '#29B5E8', logo: 'https://www.vectorlogo.zone/logos/snowflake/snowflake-icon.svg' },
     ],
@@ -72,6 +78,7 @@ const domains: Record<DomainKey, { label: string; glow: GlowColor; skills: Omit<
       { id: 'docker', label: 'Docker', color: '#2496ED', logo: dIcon('docker') },
       { id: 'k8s', label: 'Kubernetes', color: '#326CE5', logo: dIcon('kubernetes') },
       { id: 'aws', label: 'AWS', color: '#FF9900', logo: dIcon('amazonwebservices', 'plain-wordmark') },
+      { id: 'ghactions', label: 'GitHub Actions', color: '#2088FF', logo: dIcon('githubactions', 'plain') },
       { id: 'vercel', label: 'Vercel', color: '#fff', logo: dIcon('vercel', 'original') },
     ],
   },
@@ -79,8 +86,11 @@ const domains: Record<DomainKey, { label: string; glow: GlowColor; skills: Omit<
     label: 'AI',
     glow: 'pink',
     skills: [
-      { id: 'genai', label: 'Generative AI', color: '#8B5CF6', logo: '' },
-      { id: 'agentai', label: 'Agentic AI', color: '#EC4899', logo: '' },
+      { id: 'claude_code', label: 'Claude Code', color: '#EA9A73', logo: '' },
+      { id: 'agentic_ai', label: 'Agentic AI', color: '#EC4899', logo: '' },
+      { id: 'strands', label: 'Strands Agent SDK', color: '#FF9900', logo: '' },
+      { id: 'mcp', label: 'MCP', color: '#8B5CF6', logo: '' },
+      { id: 'ollama', label: 'Ollama Models', color: '#fff', logo: '' },
     ],
   },
 };
@@ -151,7 +161,69 @@ const FallbackIcon = ({ color, label }: { color: string; label: string }) => {
       </svg>
     );
   }
-  // AI sparkle icon
+  // Strands Agent SDK — AWS-style agent icon
+  if (label === 'Strands Agent SDK') {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="w-full h-full p-1">
+        <circle cx="12" cy="8" r="3" fill={color} />
+        <path d="M12 11c-4 0-7 2-7 4v2h14v-2c0-2-3-4-7-4z" fill={color} opacity="0.8" />
+        <circle cx="5" cy="6" r="1.5" fill={color} opacity="0.5" />
+        <circle cx="19" cy="6" r="1.5" fill={color} opacity="0.5" />
+        <path d="M5 7.5v3M19 7.5v3" stroke={color} strokeWidth="1" opacity="0.5" />
+        <path d="M8 8l-3-1M16 8l3-1" stroke={color} strokeWidth="0.8" opacity="0.4" />
+      </svg>
+    );
+  }
+  // MCP — protocol/connection icon
+  if (label === 'MCP') {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="w-full h-full p-1">
+        <rect x="3" y="3" width="7" height="7" rx="1.5" fill={color} opacity="0.9" />
+        <rect x="14" y="3" width="7" height="7" rx="1.5" fill={color} opacity="0.7" />
+        <rect x="3" y="14" width="7" height="7" rx="1.5" fill={color} opacity="0.7" />
+        <rect x="14" y="14" width="7" height="7" rx="1.5" fill={color} opacity="0.9" />
+        <path d="M10 6.5h4M10 17.5h4M6.5 10v4M17.5 10v4" stroke={color} strokeWidth="1.5" opacity="0.5" />
+      </svg>
+    );
+  }
+  // Ollama — llama-style icon
+  if (label === 'Ollama Models') {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="w-full h-full p-1">
+        <ellipse cx="12" cy="14" rx="7" ry="6" fill={color} opacity="0.8" />
+        <ellipse cx="12" cy="10" rx="5" ry="4.5" fill={color} />
+        <circle cx="10" cy="9.5" r="1" fill="#1f2937" />
+        <circle cx="14" cy="9.5" r="1" fill="#1f2937" />
+        <path d="M10.5 12c.5.7 2.5.7 3 0" stroke="#1f2937" strokeWidth="0.8" strokeLinecap="round" />
+        <path d="M7 8c-1-2 0-4 2-4M17 8c1-2 0-4-2-4" stroke={color} strokeWidth="1.2" strokeLinecap="round" />
+      </svg>
+    );
+  }
+  // Claude Code — terminal with Anthropic-style spark
+  if (label === 'Claude Code') {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="w-full h-full p-1">
+        <rect x="2" y="4" width="20" height="16" rx="3" stroke={color} strokeWidth="2" opacity="0.4" />
+        <path d="M6 9l3 3-3 3" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <line x1="11" y1="15" x2="17" y2="15" stroke={color} strokeWidth="2" strokeLinecap="round" />
+        <path d="M17 6l.5 1.5L19 8l-1.5.5L17 10l-.5-1.5L15 8l1.5-.5L17 6z" fill={color} />
+      </svg>
+    );
+  }
+  // Agentic AI — central core node with tool/feedback path connections
+  if (label === 'Agentic AI') {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="w-full h-full p-1">
+        <circle cx="12" cy="12" r="4" fill={color} />
+        <circle cx="12" cy="4" r="2" fill={color} opacity="0.6" />
+        <circle cx="5" cy="16" r="2" fill={color} opacity="0.6" />
+        <circle cx="19" cy="16" r="2" fill={color} opacity="0.6" />
+        <path d="M12 6v2M7 14.5l2-1M17 14.5l-2-1" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="12" cy="12" r="9" stroke={color} strokeWidth="1" strokeDasharray="3 3" opacity="0.5" />
+      </svg>
+    );
+  }
+  // Default AI sparkle icon
   return (
     <svg viewBox="0 0 24 24" fill="none" className="w-full h-full p-1">
       <path d="M12 2L14.09 8.26L20 9.27L15.55 13.97L16.91 20L12 16.9L7.09 20L8.45 13.97L4 9.27L9.91 8.26L12 2Z" fill={color} />
@@ -165,7 +237,11 @@ const OrbitingSkill = memo(({ config, angle, isDark = true }: { config: SkillCon
   const x = Math.cos(angle) * config.orbitRadius;
   const y = Math.sin(angle) * config.orbitRadius;
 
-  const needsInvert = ['next','express','vercel','kafka'].includes(config.id);
+  const needsInvert = ['next','express','vercel','kafka','ghactions'].includes(config.id);
+
+  // MCP daily-use list for special tooltip
+  const mcpList = ['Firecrawl MCP', 'Bright Data MCP', 'Playwright MCP', 'Context7 MCP'];
+  const isMcp = config.id === 'mcp';
 
   return (
     <div
@@ -192,10 +268,19 @@ const OrbitingSkill = memo(({ config, angle, isDark = true }: { config: SkillCon
         ) : (
           <FallbackIcon color={config.color} label={config.label} />
         )}
-        {hovered && (
+        {hovered && !isMcp && (
           <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 backdrop-blur-sm rounded text-xs whitespace-nowrap pointer-events-none z-30"
             style={{ backgroundColor: isDark ? 'rgba(17,24,39,0.95)' : 'rgba(0,0,0,0.85)', color: '#fff' }}>
             {config.label}
+          </div>
+        )}
+        {hovered && isMcp && (
+          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 translate-y-full px-3 py-2.5 backdrop-blur-md rounded-lg pointer-events-none z-30 min-w-[160px]"
+            style={{ backgroundColor: isDark ? 'rgba(17,24,39,0.97)' : 'rgba(0,0,0,0.92)', border: `1px solid ${config.color}40` }}>
+            <p className="text-[11px] font-bold mb-1.5 text-center" style={{ color: config.color }}>MCP</p>
+            {mcpList.map(mcp => (
+              <p key={mcp} className="text-[10px] text-white/80 py-0.5 text-center">{mcp}</p>
+            ))}
           </div>
         )}
       </div>
@@ -225,9 +310,9 @@ const OrbitPath = memo(({ radius, glowColor = 'cyan' as GlowColor, delay = 0, is
 OrbitPath.displayName = 'OrbitPath';
 
 // --- Domain filter tab ---
-const domainKeys: DomainKey[] = ['frontend', 'backend', 'data', 'database', 'cloud', 'ai'];
+const domainKeys: DomainKey[] = ['languages', 'frontend', 'backend', 'data', 'database', 'cloud', 'ai'];
 const tabColors: Record<DomainKey, string> = {
-  frontend: '#06B6D4', backend: '#22C55E', data: '#F97316',
+  languages: '#06B6D4', frontend: '#06B6D4', backend: '#22C55E', data: '#F97316',
   database: '#3B82F6', cloud: '#9333EA', ai: '#EC4899',
 };
 

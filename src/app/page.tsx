@@ -28,6 +28,13 @@ import { BallpitFooter } from "@/components/ui/interactive-hero-backgrounds";
 import { CpuArchitecture } from "@/components/ui/cpu-architecture";
 import { cn } from "@/lib/utils";
 
+/* Custom LeetCode icon (lucide-react doesn't include one) */
+const LeetCodeIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" />
+  </svg>
+);
+
 const socials = [
   {
     label: "LinkedIn",
@@ -38,6 +45,11 @@ const socials = [
     label: "GitHub",
     href: "https://github.com/srujankrishnaa",
     icon: Github,
+  },
+  {
+    label: "LeetCode",
+    href: "https://leetcode.com/u/srujaann/",
+    icon: LeetCodeIcon,
   },
   {
     label: "Blog",
@@ -64,7 +76,7 @@ const phoneApps = [
   },
   {
     label: "Resume",
-    href: "/srujan-krishna-resume.pdf",
+    href: "/srujan.resume.pdf",
     icon: FileText,
     gradient: "from-rose-300 to-orange-500",
   },
@@ -81,8 +93,14 @@ const phoneApps = [
     gradient: "from-neutral-100 to-neutral-500",
   },
   {
-    label: "Blog",
+    label: "LeetCode",
     href: socials[2].href,
+    icon: LeetCodeIcon,
+    gradient: "from-amber-400 to-yellow-600",
+  },
+  {
+    label: "Blog",
+    href: socials[3].href,
     icon: BookOpenText,
     gradient: "from-emerald-300 to-lime-500",
   },
@@ -125,6 +143,13 @@ const skillsPreview = [
 
 const projectsPreview = [
   {
+    slug: "financial-signals",
+    title: "Financial Signals Dashboard",
+    github: "https://github.com/srujankrishnaa/Alphavision",
+    description: "Real-time financial signal monitoring with AI-driven market analysis and interactive visualizations.",
+    tech: ["Python", "AI/ML", "Data Analytics"],
+  },
+  {
     slug: "bioscope-ai",
     title: "BioscopeAI",
     github: "https://github.com/srujankrishnaa/BioscopeAI",
@@ -132,11 +157,11 @@ const projectsPreview = [
     tech: ["Python", "FastAPI", "React", "ML", "Satellite Data"],
   },
   {
-    slug: "financial-signals",
-    title: "Financial Signals Dashboard",
-    github: "https://github.com/srujankrishnaa/Alphavision",
-    description: "Real-time financial signal monitoring with AI-driven market analysis and interactive visualizations.",
-    tech: ["Python", "AI/ML", "Data Analytics"],
+    slug: "cascade-lakehouse",
+    title: "Cascade Lakehouse",
+    github: "https://github.com/srujankrishnaa/Cascade-Lakehouse",
+    description: "Modern data lakehouse with Bronze-Silver-Gold medallion architecture using Iceberg and Spark.",
+    tech: ["Spark", "Iceberg", "Data Lakehouse", "Python"],
   },
   {
     slug: "ecommerce-analytics",
@@ -151,13 +176,6 @@ const projectsPreview = [
     github: "https://github.com/srujankrishnaa/weather-data-automated-etl-pipeline",
     description: "Automated ETL pipeline ingesting weather data with orchestration, transformation, and warehouse loading.",
     tech: ["Python", "ETL", "Airflow", "Data Engineering"],
-  },
-  {
-    slug: "cascade-lakehouse",
-    title: "Cascade Lakehouse",
-    github: "https://github.com/srujankrishnaa/Cascade-Lakehouse",
-    description: "Modern data lakehouse with Bronze-Silver-Gold medallion architecture using Iceberg and Spark.",
-    tech: ["Spark", "Iceberg", "Data Lakehouse", "Python"],
   },
 ];
 
@@ -613,7 +631,7 @@ function AboutPhoneSection({ isGoldMode }: { isGoldMode?: boolean }) {
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg" variant="neon">
-              <Link href="/srujan-krishna-resume.pdf" target="_blank">
+              <Link href="/srujan.resume.pdf" target="_blank">
                 View Resume
               </Link>
             </Button>
